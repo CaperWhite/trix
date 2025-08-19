@@ -312,7 +312,8 @@ Copyright © 2025 37signals, LLC
       });
       if (target != null) {
         withCallback === null || withCallback === void 0 || withCallback.call(target, event, target);
-        if (preventDefault) {
+        const preventDefaultInputTypes = ['insertParagraph'];
+        if (preventDefault || preventDefaultInputTypes.includes(event.inputType)) {
           event.preventDefault();
         }
       }
